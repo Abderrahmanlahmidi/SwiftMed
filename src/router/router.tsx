@@ -1,10 +1,21 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Home } from "./modules/main/lazyMain";
+import { Home, Dashboard, Map } from "./modules/main/lazyMain";
 import { withSuspense } from "./modules/main/lazyMain";
 
+
 export const router = createBrowserRouter([
+    // {
+    //     path:"/",
+    //     element:withSuspense(<Dashboard/>)
+    // },
     {
         path:"/",
-        element:withSuspense(<Home/>)
+        element:withSuspense(<Dashboard/>),
+        children:[
+            {
+                index:true,
+                element:<Map/>
+            }
+        ]
     }
 ])

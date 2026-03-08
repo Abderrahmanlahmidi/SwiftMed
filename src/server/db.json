@@ -1,3 +1,195 @@
 {
-    
+  "roles": [
+    { "id": 1, "name": "ADMIN" },
+    { "id": 2, "name": "REGULATOR" },
+    { "id": 3, "name": "DRIVER" },
+    { "id": 4, "name": "PARAMEDIC" }
+  ],
+
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Ayoub",
+      "lastName": "ElHaddad",
+      "email": "ayoub@example.com",
+      "phone": "+212600112233",
+      "roleId": 2
+    },
+    {
+      "id": 2,
+      "firstName": "Sara",
+      "lastName": "Bennani",
+      "email": "sara@example.com",
+      "phone": "+212600445566",
+      "roleId": 3
+    },
+    {
+      "id": 3,
+      "firstName": "Hamza",
+      "lastName": "Othmani",
+      "email": "hamza@example.com",
+      "phone": "+212600778899",
+      "roleId": 4
+    }
+  ],
+
+  "ambulances": [
+    {
+      "id": 1,
+      "code": "AMB-001",
+      "status": "AVAILABLE",
+      "lat": 33.5731,
+      "lng": -7.5898
+    },
+    {
+      "id": 2,
+      "code": "AMB-002",
+      "status": "MAINTENANCE",
+      "lat": 34.020882,
+      "lng": -6.84165
+    }
+  ],
+
+  "equipments": [
+    { "id": 1, "name": "Oxygen Tank" },
+    { "id": 2, "name": "First Aid Kit" },
+    { "id": 3, "name": "Defibrillator" }
+  ],
+
+  "ambulance_equipments": [
+    { "id": 1, "ambulanceId": 1, "equipmentId": 1, "quantity": 2 },
+    { "id": 2, "ambulanceId": 1, "equipmentId": 2, "quantity": 1 },
+    { "id": 3, "ambulanceId": 2, "equipmentId": 3, "quantity": 1 }
+  ],
+
+  "crew_members": [
+    {
+      "id": 1,
+      "ambulanceId": 1,
+      "userId": 2,
+      "roleInCrew": "DRIVER",
+      "isOnShift": true
+    },
+    {
+      "id": 2,
+      "ambulanceId": 1,
+      "userId": 3,
+      "roleInCrew": "PARAMEDIC",
+      "isOnShift": true
+    }
+  ],
+
+  "assignments": [
+    {
+      "id": 1,
+      "incidentId": 2,
+      "ambulanceId": 1,
+      "assignedAt": "2025-01-15T10:47:00Z",
+      "eta": 6,
+      "arrivedAt": null,
+      "status": "IN_PROGRESS"
+    }
+  ],
+
+  "incidents": [
+    {
+      "id": 1,
+      "type": "ACCIDENT",
+      "severity": "HIGH",
+      "status": "PENDING",
+      "description": "Road accident involving two vehicles.",
+      "lat": 40.758,
+      "lng": -73.9855,
+      "reportedBy": 1,
+      "createdAt": "2025-01-15T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "type": "HEART_ATTACK",
+      "severity": "CRITICAL",
+      "status": "ASSIGNED",
+      "description": "Person collapsed in a mall.",
+      "lat": 40.7592,
+      "lng": -73.984,
+      "reportedBy": 1,
+      "createdAt": "2025-01-15T10:45:00Z"
+    },
+    {
+      "id": 3,
+      "type": "FIRE",
+      "severity": "MEDIUM",
+      "status": "PENDING",
+      "description": "Small fire reported in an apartment building.",
+      "lat": 40.7585,
+      "lng": -73.9862,
+      "reportedBy": 2,
+      "createdAt": "2025-01-15T11:00:00Z"
+    },
+    {
+      "id": 4,
+      "type": "ROBBERY",
+      "severity": "LOW",
+      "status": "PENDING",
+      "description": "Robbery attempt reported near a store.",
+      "lat": 40.7597,
+      "lng": -73.9851,
+      "reportedBy": 3,
+      "createdAt": "2025-01-15T11:10:00Z"
+    },
+    {
+      "id": 5,
+      "type": "INJURY",
+      "severity": "MEDIUM",
+      "status": "ASSIGNED",
+      "description": "Person injured during construction work.",
+      "lat": 40.7577,
+      "lng": -73.9846,
+      "reportedBy": 2,
+      "createdAt": "2025-01-15T11:20:00Z"
+    },
+    {
+      "id": 6,
+      "type": "UNCONSCIOUS_PERSON",
+      "severity": "CRITICAL",
+      "status": "PENDING",
+      "description": "Unconscious person found on sidewalk.",
+      "lat": 40.7593,
+      "lng": -73.986,
+      "reportedBy": 1,
+      "createdAt": "2025-01-15T11:35:00Z"
+    }
+  ],
+
+  "positions": [
+    { "id": 1, "ambulanceId": 1, "lat": 40.7588, "lng": -73.9852 },
+    { "id": 2, "ambulanceId": 2, "lat": 40.7591, "lng": -73.9848 },
+    { "id": 3, "ambulanceId": 1, "lat": 40.7585, "lng": -73.9857 },
+    { "id": 4, "ambulanceId": 3, "lat": 40.7593, "lng": -73.9859 },
+    { "id": 5, "ambulanceId": 2, "lat": 40.7589, "lng": -73.9854 },
+    { "id": 6, "ambulanceId": 4, "lat": 40.7594, "lng": -73.9847 },
+    { "id": 7, "ambulanceId": 3, "lat": 40.7587, "lng": -73.9851 },
+    { "id": 8, "ambulanceId": 4, "lat": 40.7583, "lng": -73.9858 },
+    { "id": 9, "ambulanceId": 1, "lat": 40.759, "lng": -73.9849 }
+  ],
+
+  "maintenance_records": [
+    {
+      "id": 1,
+      "ambulanceId": 2,
+      "type": "Engine Check",
+      "status": "PENDING",
+      "date": "2025-01-14"
+    }
+  ],
+
+  "notifications": [
+    {
+      "id": 1,
+      "userId": 1,
+      "type": "INCIDENT_CREATED",
+      "message": "New critical incident reported.",
+      "read": false,
+      "createdAt": "2025-01-15T10:45:00Z"
+    }
+  ]
 }
